@@ -1,0 +1,100 @@
+/* Common Tab Styles */
+
+.tab-container {
+  margin-top: 2rem;
+}
+
+.tab-list {
+  display: flex;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  gap: 1.5rem; /* Add space between tab items */
+  padding: 0 0.5rem;
+  background: transparent;
+  box-shadow: none;
+}
+
+.tab-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Override any Headless UI default styles */
+[role="tab"] {
+  all: unset;
+  cursor: pointer;
+}
+
+.tab-item {
+  flex: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+  color: #6b7280;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  background: transparent;
+  outline: none;
+}
+
+.tab-item-selected {
+  color: #4f46e5;
+  border: none;
+  border-bottom: 3px solid #4f46e5;
+  background: transparent;
+  box-shadow: none;
+}
+
+.tab-item:not(.tab-item-selected):hover {
+  color: #4f46e5;
+  border: none;
+  border-bottom: 3px solid #e5e7eb;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Add a subtle animation for tab selection */
+@keyframes tabFadeIn {
+  from { opacity: 0.7; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-item-selected {
+  animation: tabFadeIn 0.3s ease-out forwards;
+}
+
+/* Panel styles */
+.tab-panel {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  animation: panelFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes panelFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tab-panel {
+    padding: 1.5rem;
+  }
+  
+  .tab-item {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}

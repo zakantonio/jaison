@@ -1,0 +1,176 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "Jaison OCR API",
+    "description": "Collection for interacting with the Jaison OCR API service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text",
+            "description": "Your API key"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/v1/health",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "health"
+          ]
+        },
+        "description": "Check if the OCR API service is running properly"
+      },
+      "response": []
+    },
+    {
+      "name": "Upload Document",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/path/to/your/document.jpg",
+              "description": "The document file to upload (JPG, PNG, or PDF)"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/upload",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "upload"
+          ]
+        },
+        "description": "Upload a document for OCR processing"
+      },
+      "response": []
+    },
+    {
+      "name": "Process Document",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"file_id\": \"550e8400-e29b-41d4-a716-446655440000\",\n    \"document_type\": \"receipt\",\n    \"extraction_prompt\": \"Extract the total amount, date, and vendor name\",\n    \"model\": \"meta-llama/llama-4-maverick:free\",\n    \"output_schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_amount\": { \"type\": \"number\" },\n            \"date\": { \"type\": \"string\", \"format\": \"date\" },\n            \"vendor_name\": { \"type\": \"string\" }\n        }\n    }\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/process",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "process"
+          ]
+        },
+        "description": "Process an uploaded document with OCR"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Processing Status",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/v1/status/{{request_id}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "status",
+            "{{request_id}}"
+          ]
+        },
+        "description": "Get the status of a document processing request"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8420",
+      "type": "string",
+      "description": "Base URL for the OCR API service"
+    },
+    {
+      "key": "api_key",
+      "value": "sk_your_api_key_here",
+      "type": "string",
+      "description": "Your API key for authentication"
+    },
+    {
+      "key": "request_id",
+      "value": "550e8400-e29b-41d4-a716-446655440001",
+      "type": "string",
+      "description": "ID of the processing request"
+    }
+  ]
+}

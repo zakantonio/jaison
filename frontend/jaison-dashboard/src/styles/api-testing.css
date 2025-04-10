@@ -1,0 +1,232 @@
+/* API Testing Page Styles */
+
+.api-testing-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .api-testing-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.api-testing-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.api-testing-card-header {
+  margin-bottom: 1.5rem;
+}
+
+.api-testing-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.api-testing-card-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.api-testing-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.api-testing-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.api-testing-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.api-testing-form-group {
+  margin-bottom: 1rem;
+}
+
+.api-testing-form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.api-testing-form-input {
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.api-testing-form-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.api-testing-form-select {
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  background-color: white;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.api-testing-form-select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.api-testing-form-textarea {
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  min-height: 100px;
+  resize: vertical;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.api-testing-form-textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.api-testing-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.api-testing-button-primary {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.api-testing-button-primary:hover {
+  background-color: #4338ca;
+}
+
+.api-testing-button-primary:disabled {
+  background-color: #6b7280;
+  cursor: not-allowed;
+}
+
+.api-testing-success-message {
+  background-color: #ecfdf5;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.api-testing-success-icon {
+  color: #10b981;
+  margin-right: 0.5rem;
+}
+
+.api-testing-error-message {
+  background-color: #fef2f2;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.api-testing-error-icon {
+  color: #ef4444;
+  margin-right: 0.5rem;
+}
+
+.api-testing-status {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.api-testing-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.api-testing-status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.api-testing-status-processing {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.api-testing-status-completed {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.api-testing-status-failed {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.api-testing-result {
+  background-color: #f9fafb;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.api-testing-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.api-testing-spinner-icon {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid #e5e7eb;
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

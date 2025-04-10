@@ -1,0 +1,200 @@
+/* Examples Page Styles */
+
+.examples-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.examples-header {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 2rem;
+}
+
+.examples-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.examples-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+}
+
+/* Tab styles - Now using common tab styles from tabs.css */
+
+/* Panel styles - Now using common panel styles from tabs.css */
+
+/* Section styles */
+.examples-section {
+  margin-bottom: 2.5rem;
+}
+
+.examples-section:last-child {
+  margin-bottom: 0;
+}
+
+.examples-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.examples-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #4f46e5;
+}
+
+.examples-subsection {
+  margin-top: 2rem;
+}
+
+.examples-subsection-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  display: inline-block;
+  position: relative;
+}
+
+.examples-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+/* Grid layout */
+.examples-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+/* Code block styles */
+.examples-code-block {
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.examples-code-block:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.examples-code-block pre {
+  margin: 0 !important;
+  border-radius: 0.5rem !important;
+  max-height: 400px;
+  overflow: auto !important;
+}
+
+/* Info box styles */
+.examples-info-box {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.examples-info-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.examples-info-box::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 4px 0 0 4px;
+}
+
+.examples-info-box-content {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Tip box */
+.examples-tip-box {
+  background-color: #fffbeb;
+}
+
+.examples-tip-box::before {
+  background-color: #f59e0b;
+}
+
+.examples-tip-box-content {
+  color: #92400e;
+}
+
+/* Warning box */
+.examples-warning-box {
+  background-color: #fef2f2;
+}
+
+.examples-warning-box::before {
+  background-color: #ef4444;
+}
+
+.examples-warning-box-content {
+  color: #b91c1c;
+}
+
+/* Request box */
+.examples-request-box {
+  background-color: #f9fafb;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.examples-request-label {
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.examples-request-value {
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.examples-request-value:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .examples-container {
+    padding: 1rem;
+  }
+
+  .examples-panel {
+    padding: 1.5rem;
+  }
+
+  .examples-tab {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}
