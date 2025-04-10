@@ -1,10 +1,10 @@
-# Jaison - OCR as a Service
+# Jaison - OCR Service powered by LLM.
 
 Extract structured data from document images using multimodal LLMs.
 
 ## Overview
 
-Jaison is a SaaS platform that leverages multimodal Large Language Models (LLMs) to extract structured information from document images. Unlike traditional OCR services that only convert text from images, Jaison uses advanced visual understanding capabilities of multimodal models to extract specific data requested by the user.
+Jaison is a platform that leverages multimodal Large Language Models (LLMs) to extract structured information from document images. Unlike traditional OCR services that only convert text from images, Jaison uses advanced visual understanding capabilities of multimodal models to extract specific data requested by the user.
 
 Users can upload images of documents (like receipts, invoices, tickets), specify what information they want to extract using natural language prompts, and receive structured JSON data in response.
 
@@ -38,7 +38,7 @@ Jaison uses a microservices architecture with two separate services:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/jaison.git
+   git clone https://github.com/zakantonio/jaison.git
    cd jaison
    ```
 
@@ -111,9 +111,6 @@ make admin-api
 
 # Run the frontend server
 make frontend
-
-# Run all services (requires tmux)
-make dev
 ```
 
 The OCR API will be available at http://localhost:8420
@@ -175,9 +172,7 @@ make lint
 Once the services are running, you can access the API documentation at:
 
 - OCR API Swagger UI: http://localhost:8420/docs
-- OCR API ReDoc: http://localhost:8420/redoc
 - Admin API Swagger UI: http://localhost:8421/docs
-- Admin API ReDoc: http://localhost:8421/redoc
 
 Detailed API documentation is also available in the `docs/api.md` file.
 
